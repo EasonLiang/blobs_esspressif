@@ -18,8 +18,8 @@ def client_left(client, server):
 
 # Called when a client sends a message
 def message_received(client, server, message):
-	print("Client(%d) sent[%d]" % (client['id'], len(message)))
-        server.send_message(client, message)
+	print("Client(%d) sent[%d] :: %s" % (client['id'], len(message), message))
+#	server.send_message(client, "received automatically by eason :: ")
 
 PORT=9001
 server = WebsocketServer(PORT, host="192.0.2.2", loglevel=logging.INFO)
